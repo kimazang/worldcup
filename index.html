@@ -109,7 +109,6 @@
         
         .my-highlight {
             background-color: #fef08a !important;
-            animation: bounce-subtle 1s infinite;
             border-color: #ef4444;
         }
     </style>
@@ -131,7 +130,7 @@
             
             <div class="inline-block animate-bounce-subtle mb-6">
                 <p class="text-xl md:text-2xl font-bold bg-yellow-400 text-black px-6 py-2 border-4 border-black box-shadow-solid shadow-black">
-                    1명 추첨 사이버머니 50만 지급!
+                    1명 추첨 사이버머니 50만 추가!
                 </p>
             </div>
             
@@ -498,7 +497,7 @@
         async function submitPrediction() {
             // [수정] 마감 시간 체크 (한국시간 2026-06-12 09:00)
             const deadline = new Date('2026-06-12T09:00:00+09:00');
-            if (new Date() >= deadline) {
+            if (new Date() > deadline) {
                 return showAlert("이벤트 응모가 마감되었습니다.\n참여해주셔서 감사합니다! 🙏");
             }
 
@@ -532,8 +531,7 @@
             try {
                 // [수정] safeId 대신 encodeURIComponent로 원본 닉네임과 1:1 대응 보장
                 //        Firebase 문서 ID 금지 문자만 제거하되 원본 식별 가능하게
-                const normalizedNickname = nickname.toLowerCase();
-                const safeId = encodeURIComponent(normalizedNickname).replace(/\./g, '%2E');
+                const safeId = encodeURIComponent(nickname).replace(/\./g, '%2E');
                 const docRef = doc(db, 'artifacts', EVENT_APP_ID, 'public', 'data', 'predictions', safeId);
                 
                 await setDoc(docRef, {
