@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>큐플레이 아카이브 | 대한민국 VS 체코 승부예측</title>
-    <meta name="title" content="큐플레이 아카이브 | 대한민국 VS 체코 승부예측">
+    <title>큐플레이 아카이브 | 김아장배 대한민국 VS 체코 승부예측</title>
+    <meta name="title" content="큐플레이 아카이브 | 김아장배 대한민국 VS 체코 승부예측">
     <meta name="description" content="승부예측 성공하고 사이버머니 50만 받자! 지금 바로 예측에 참여해보세요.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://qplay-worldcup.web.app/">
-    <meta property="og:title" content="큐플레이 아카이브 | 대한민국 VS 체코 승부예측">
+    <meta property="og:title" content="큐플레이 아카이브 | 김아장배 대한민국 VS 체코 승부예측">
     <meta property="og:description" content="승부예측 성공하고 사이버머니 50만 받자! 지금 바로 예측에 참여해보세요.">
     <meta property="og:image" content="https://github.com/kimazang/worldcup/blob/main/worldcup_thumb.png?raw=true">
     
@@ -125,17 +125,17 @@
                     <p class="text-2xl md:text-3xl font-bold text-yellow-300 drop-shadow-md">김아장배</p>
                 </div>
             </div>
-            <h1 class="text-3xl md:text-5xl font-bold mb-2 tracking-widest" style="text-shadow: 3px 3px 0px #000;">대한민국 VS 체코</h1>
-            <h2 class="text-xl md:text-3xl font-bold mb-6" style="text-shadow: 2px 2px 0px #000;">승부예측 이벤트</h2>
+            <h1 class="text-3xl md:text-5xl font-bold mb-2 tracking-widest" style="text-shadow: 3px 3px 0px #000;">한국 VS 체코</h1>
+            <h2 class="text-xl md:text-3xl font-bold mb-6" style="text-shadow: 2px 2px 0px #000;">승부예측</h2>
             
             <div class="inline-block animate-bounce-subtle mb-6">
                 <p class="text-base md:text-2xl font-bold bg-yellow-400 text-black px-4 py-2 border-4 border-black box-shadow-solid shadow-black">
-                    1명 추첨 사이버머니 50만 추가!
+                    추첨 사이버머니 50만!
                 </p>
             </div>
             
             <div class="bg-white text-black p-4 md:p-5 border-4 border-black text-left text-sm md:text-base leading-relaxed">
-                <p class="mb-2 text-lg">⏰ <strong>마감:</strong> 6월 12일(금) 오전 9시 정각</p>
+                <p class="mb-2 text-lg">⏰ <strong>마감:</strong> 6월 12일(금) 오전 9시</p>
                 <div class="bg-gray-100 p-3 border-2 border-dashed border-gray-400 mt-3">
                     <p class="font-bold mb-2 text-red-600">🏆 당첨자 추첨 순위</p>
                     <ul class="list-disc list-inside space-y-1 text-gray-800 font-bold">
@@ -169,7 +169,7 @@
                 </h4>
                 <div class="flex items-center justify-center gap-6 md:gap-12 bg-gray-50 p-6 border-4 border-black">
                     <div class="flex flex-col items-center w-24 md:w-32">
-                        <span class="text-red-600 font-bold text-lg md:text-2xl mb-3">대한민국</span>
+                        <span class="text-red-600 font-bold text-lg md:text-2xl mb-3">한국</span>
                         <input type="number" id="korea-score" min="0" max="20" class="pixel-input w-full text-center p-3 text-3xl md:text-4xl outline-none focus:bg-yellow-50" placeholder="0">
                     </div>
                     <span class="text-5xl font-bold text-gray-400">:</span>
@@ -211,7 +211,7 @@
 
         <section class="pixel-box p-6 md:p-8 bg-blue-50">
             <h3 class="text-xl md:text-2xl font-bold mb-6 flex items-center gap-2 border-b-4 border-black pb-2">
-                📊 실시간 예상 스코어 TOP 3
+                📊 예상 스코어 TOP 3
             </h3>
             <div id="trends-container" class="space-y-5">
                 <p class="text-center text-gray-500 py-4">데이터를 불러오는 중입니다...</p>
@@ -220,9 +220,9 @@
 
         <section class="pixel-box p-6 md:p-8 bg-white">
             <h3 class="text-xl md:text-2xl font-bold mb-2 flex items-center gap-2">
-                🔥 실시간 참가자 현황
+                🔥 참가자 현황
             </h3>
-            <p class="text-sm text-gray-500 mb-4 font-bold">* 닉네임을 클릭하면 유저의 예측을 볼 수 있어요!</p>
+            <p class="text-sm text-gray-500 mb-4 font-bold">* 닉네임 클릭하면 예측 확인!</p>
             
             <div class="border-4 border-black p-4 md:p-6 bg-gray-100 min-h-[200px] flex flex-wrap gap-3 content-start" id="participant-board">
                 <p class="text-center text-gray-500 w-full py-4">데이터를 불러오는 중입니다...</p>
@@ -417,7 +417,7 @@
                     btn.textContent = `${emoji} ${p.nickname}`;
 
                     // 예측 정보는 data 속성이 아닌 클로저로 안전하게 전달
-                    const predictText = `대한민국 ${p.koreaScore} : ${p.czechScore} 체코\n[${p.player}]`;
+                    const predictText = `한국 ${p.koreaScore} : ${p.czechScore} 체코\n[${p.player}]`;
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         showBubble(e, predictText);
@@ -547,7 +547,7 @@
                 localStorage.setItem('myPredictionNickname', nickname);
                 updateBoard();
 
-                showAlert(`[예측 완료!]\n\n닉네임: ${nickname}\n스코어: 대한민국 ${koreaScore} : ${czechScore} 체코\n선취골: ${selectedPlayer}\n\n사이버머니 50만의 행운을 빕니다! 🍀`);
+                showAlert(`[예측 완료!]\n\n닉네임: ${nickname}\n스코어: 한국 ${koreaScore} : ${czechScore} 체코\n선취골: ${selectedPlayer}\n\n사이버머니 50만의 행운을 빕니다! 🍀`);
 
             } catch (error) {
                 console.error("저장 실패:", error);
